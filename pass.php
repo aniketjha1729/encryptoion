@@ -20,7 +20,9 @@
         return $data;
       }
     ?>
-    <h2>PHP Form Validation Example</h2>
+    <div style="margin-left:15%;margin-right:60% width:50%">
+      <h2>Encryption Page</h2>
+    </div>
     <div class="input" style="margin-right:10%;margin-left:10%">
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
         Name: <input type="text" name="name">
