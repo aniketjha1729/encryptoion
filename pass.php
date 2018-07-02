@@ -20,7 +20,7 @@
         return $data;
       }
     ?>
-    <div style="margin-left:15%;margin-right:60% width:50%">
+    <div style="margin-left:15%;margin-right:60%;width:50%">
       <h2>Encryption Page</h2>
     </div>
     <div class="input" style="margin-right:10%;margin-left:10%">
@@ -30,8 +30,8 @@
         Key: <input type="number" name="email">
         <br><br>
         <div class="mycontainer">
-          <button class="btn">Button</button>
-          <button class="btn">Button</button>
+          <button class="btne">Button</button>
+          <button class="btnc">Button</button>
         </div>
       </form>
      </div> 

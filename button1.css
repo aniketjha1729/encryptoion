@@ -1,6 +1,6 @@
 
 
-.mycontainer .btn {
+.mycontainer .btne {
     background-color: #f1f1f1;
     color: black;
      font-size: 12px;
@@ -9,12 +9,38 @@
     cursor: pointer;
     border-radius: 30px;
     text-align: center;
-    margin-top: 0.7%
+    margin-top: 0.7%;
+    margin-left: 4%;
+
+
 }
 
-.mycontainer .btn:hover {
+.mycontainer .btne:hover {
     background-color: #4286f4;
     color: white;
     font-size: 12px;
     padding: 7px 12px;
+}
+
+.mycontainer .btnc {
+    background-color: #f1f1f1;
+    color: black;
+     font-size: 12px;
+    padding: 7px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 0.7%;
+    margin-left: 4%;
+
+
+}
+
+.mycontainer .btnc:hover {
+    background-color: #4286f4;
+    color: white;
+    font-size: 12px;
+    padding: 7px 12px;
+    margin-left: 4%;
 }
