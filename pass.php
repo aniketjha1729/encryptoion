@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <link rel="stylesheet" type="text/css" href="button1.css">
 </head>
 <body>
   <div class="main" style="margin-top:10%;margin-left:38%;margin-right:50%;width: 50%">
@@ -25,16 +25,16 @@
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
         Name: <input type="text" name="name">
         <br><br>
-        E-mail: <input type="number" name="email">
+        Key: <input type="number" name="email">
         <br><br>
-        <div class="button" style="margin-right:10%;margin-left:10%">
-          <input type="submit" name="submit" value="Encrypt">  
+        <div class="mycontainer">
+          <button class="btn">Button</button>
+          <button class="btn">Button</button>
         </div>
       </form>
      </div> 
      <?php
-        echo "<h2>Your Input:</h2>";
-        echo "<br>";
+       
 
         if(strlen($name)!=0){
           for ($x = 0; $x <strlen($name); $x++) {
