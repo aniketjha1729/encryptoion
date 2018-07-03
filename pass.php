@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="button1.css">
+  <link rel="stylesheet" type="text/css" href="assests/button1.css">
 </head>
 <body>
   <div class="main" style="margin-top:10%;margin-left:38%;margin-right:50%;width: 50%">
@@ -23,10 +23,11 @@
     </div>
     <div class="input" style="margin-right:10%;margin-left:10%">
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-        Name: <input type="text" name="name" size="18" >
+        Name: <input type="text" name="name" size="18" value="<?php echo '$_post['name']';?>">
         <br><br>
-        Key:<input type="number" name="email" >
+        Key:<input type="number" name="email" value="<?php echo '$_post['email']';?>" >
         <br><br>
+        Result:
         <?php
         $ans="";
           if (isset($_POST['encrypt'])){
@@ -43,7 +44,7 @@
                 }
               }
             }
-            echo "Result:<input type='text' value='$ans'/>";
+            echo "<input type='text' value='$ans'/>";
           }
         ?>
         <div class="mycontainer">
