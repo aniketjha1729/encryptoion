@@ -20,24 +20,27 @@
         return $data;
       }
     ?>
-    <div style="margin-left:15%;margin-right:60%;width:50%">
+    <div style="margin-left:15%;margin-right:60%;width:70%">
       <h2>Encryption Page</h2>
     </div>
     <div class="input" style="margin-right:10%;margin-left:10%">
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-        Name: <input type="text" name="name">
+        Name: <input type="text" name="name" size="18" >
         <br><br>
-        Key: <input type="number" name="email">
+        Key:<input type="number" name="email" >
+        <br><br>
+        <div style="margin-right:40%;">
+         Encrypted Text:<input type="text" name="enc">
+        </div> 
         <br><br>
         <div class="mycontainer">
-          <button class="btne">Button</button>
-          <button class="btnc">Button</button>
+          <button class="btne" name="encrypt">Encrypt</button>
+          <button class="btnc" name="clear">Clear</button>
         </div>
       </form>
      </div> 
      <?php
-       
-
+      if (isset($_POST['encrypt'])){
         if(strlen($name)!=0){
           for ($x = 0; $x <strlen($name); $x++) {
             if((ord($name[$x])+$email)>122)
@@ -48,6 +51,7 @@
               echo (chr(ord($name[$x])+$email));
           }
         }
+      }
       ?>
   </div>
 </body>

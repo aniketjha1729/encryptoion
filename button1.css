@@ -1,5 +1,3 @@
-
-
 .mycontainer .btne {
     background-color: #f1f1f1;
     color: black;
@@ -10,17 +8,16 @@
     border-radius: 30px;
     text-align: center;
     margin-top: 0.7%;
-    margin-left: 4%;
-
-
+    margin-left: 5%
+    
 }
-
 .mycontainer .btne:hover {
     background-color: #4286f4;
     color: white;
     font-size: 12px;
     padding: 7px 12px;
 }
+
 
 .mycontainer .btnc {
     background-color: #f1f1f1;
@@ -32,15 +29,17 @@
     border-radius: 30px;
     text-align: center;
     margin-top: 0.7%;
-    margin-left: 4%;
-
-
+    margin-left: 7%;
+   
 }
-
 .mycontainer .btnc:hover {
-    background-color: #4286f4;
+    background-color: #f45642;
     color: white;
     font-size: 12px;
     padding: 7px 12px;
-    margin-left: 4%;
+    margin-left: 7%;
+    
 }
+
+
+
