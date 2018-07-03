@@ -7,12 +7,10 @@
   <div class="main" style="margin-top:10%;margin-left:38%;margin-right:50%;width: 50%">
     <?php
       $name = $email = "";
-
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = test_input($_POST["name"]);
         $email = test_input($_POST["email"]);
       }
-
       function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -29,30 +27,31 @@
         <br><br>
         Key:<input type="number" name="email" >
         <br><br>
-        <div style="margin-right:40%;">
-         Encrypted Text:<input type="text" name="enc">
-        </div> 
-        <br><br>
+        <?php
+        $ans="";
+          if (isset($_POST['encrypt'])){
+            if(strlen($name)!=0){
+              for ($x = 0; $x <strlen($name); $x++) {
+                if((ord($name[$x])+$email)>122){
+                  $ans=$ans.chr((ord($name[$x])+$email)-122+96);
+                }
+                else if(ord($name[$x])==32){
+                  $ans= $ans.chr(ord($name[$x]));
+                }
+                else{
+                  $ans=$ans.chr(ord($name[$x])+$email);
+                }
+              }
+            }
+            echo "Result:<input type='text' value='$ans'/>";
+          }
+        ?>
         <div class="mycontainer">
           <button class="btne" name="encrypt">Encrypt</button>
           <button class="btnc" name="clear">Clear</button>
         </div>
       </form>
      </div> 
-     <?php
-      if (isset($_POST['encrypt'])){
-        if(strlen($name)!=0){
-          for ($x = 0; $x <strlen($name); $x++) {
-            if((ord($name[$x])+$email)>122)
-              echo (chr((ord($name[$x])+$email)-122+96));
-            elseif(ord($name[$x])==32)
-              echo (chr(ord($name[$x])));
-            else
-              echo (chr(ord($name[$x])+$email));
-          }
-        }
-      }
-      ?>
   </div>
 </body>
 </html>
