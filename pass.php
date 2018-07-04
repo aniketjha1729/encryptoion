@@ -2,6 +2,13 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="assests/button1.css">
+  <script>
+    function change(){
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+}
+
+  </script>
 </head>
 <body>
   <div class="main" style="margin-top:10%;margin-left:38%;margin-right:50%;width: 50%">
@@ -23,9 +30,9 @@
     </div>
     <div class="input" style="margin-right:10%;margin-left:10%">
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-        Name: <input type="text" name="name" size="18" value="<?php echo '$_post['name']';?>">
+        Name:<input type="text"  name="name" size="18" value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>" >
         <br><br>
-        Key:<input type="number" name="email" value="<?php echo '$_post['email']';?>" >
+        Key:<input type="number" name="email" id="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>">
         <br><br>
         Result:
         <?php
@@ -44,15 +51,16 @@
                 }
               }
             }
-            echo "<input type='text' value='$ans'/>";
+            //echo "<input type='text' value='$ans'/>";
           }
         ?>
+        <input value=<?php if (isset($ans)) echo $ans ?>>
         <div class="mycontainer">
           <button class="btne" name="encrypt">Encrypt</button>
-          <button class="btnc" name="clear">Clear</button>
+          <button  class="btnc" name="clear"  onclick="change()">Clear</button>
         </div>
       </form>
-     </div> 
+    </div> 
   </div>
 </body>
 </html>
