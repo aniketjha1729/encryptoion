@@ -23,8 +23,11 @@ $conn=mysqli_connect($dbservername,$username,$password,$dbname);
 			$sql="SELECT * FROM login WHERE user_name='$uid'";
 			$result=mysqli_query($conn,$sql);
 			$resultCheck=mysqli_num_rows($result);
-			if($resultCheck<1){
-				header("Location: index.php?login=no account found");
+			if($resultCheck<1){?>
+					<script>
+							alert("Account Not found");
+            				window.location.href='index.php';
+        				</script><?php
 					exit();
 			}else{
 				if($row=mysqli_fetch_assoc($result)){
@@ -38,9 +41,11 @@ $conn=mysqli_connect($dbservername,$username,$password,$dbname);
 						<?php
 						exit();
 					}elseif ($hashedPwdCheck==true) {
-						$_SESSION['u_id']=$row['user_id'];
-						$_SESSION['u_email']=$row['user_email'];
-						$_SESSION['u_uid']=$row['user_name'];?>
+						$_SESSION['u_id']=$row['id'];
+						// $_SESSION['u_email']=$row['user_email'];
+						// $_SESSION['u_uid']=$row['user_name'];
+						
+						?>
 						<script>
             				window.location.href='dashboard.php';
         				</script>
@@ -51,8 +56,11 @@ $conn=mysqli_connect($dbservername,$username,$password,$dbname);
 				}
 			}
 		}
-	}else{
-			header("Location: ../login.php?login=error");
+	}else{?>
+		<script>
+            alert("Something went wrong");
+        </script>
+		<?php
 					exit();
 		}
 ?>

@@ -30,13 +30,22 @@ function test($val)
 				$result=mysqli_query($conn,$sql);
 				$resultCheck=mysqli_num_rows($result);
 				if($resultCheck>0){
-					header("Location: index.php?signup=usertaken");
+					?>
+					<script>
+							alert("User already registered")
+            				window.location.href='index.php';
+        				</script>
+					<?php
 					exit();
 				}else{
 					$hashed=password_hash($pwd,PASSWORD_DEFAULT);
 					$sql="INSERT INTO login(user_name,user_mob,user_email,user_pwd) VALUES('$username','$mobile','$email','$hashed')";
-					$result =mysqli_query($conn,$sql);
-					header("Location: index.php?signup=success");
+					$result =mysqli_query($conn,$sql);?>
+					<script>
+							alert("sign up sucessfull")
+            				window.location.href='dashboard.php';
+        				</script>
+					<?php
 					exit();
 					}
 				}
