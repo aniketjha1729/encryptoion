@@ -53,4 +53,4 @@ function test($val)
 	}else{
 		header("Location: signup.php");
 		exit();
-	}
+	}?>

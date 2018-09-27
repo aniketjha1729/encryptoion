@@ -27,31 +27,30 @@
             <div class="container">
                <div class="hello-left">
                     <center>
-                   <textarea rows="25" cols="30" style="border-radius:10px"></textarea>
+                   <textarea rows="29" cols="30" style="border-radius:10px"></textarea>
                     </center>
 
                </div>
                <div class="hello-right">
                    <center>
-                   <input type="text" class="inp" name="todo1"> <br>
-                   <input type="text" class="inp" name="todo2"> <br>
-                   <input type="text" class="inp" name="todo3"> <br>
-                   <input type="text" class="inp" name="todo4"> <br>
-                   <input type="text" class="inp" name="todo5"> <br>
-                   <input type="text" class="inp" name="todo6"> <br>
-                   <input type="submit" class="btn-submit" name="btn-submit" value="submit">
-                   <input type="submit" class="btn-del" name="btn-del" value="delete">
-                    </center>
-                   
+                    <form action="todo.php" method="post"> 
+                        <input type="text" class="inp" name="todo1"> <br>
+                        <input type="text" class="inp" name="todo2"> <br>
+                        <input type="text" class="inp" name="todo3"> <br>
+                        <input type="text" class="inp" name="todo4"> <br>
+                        <input type="text" class="inp" name="todo5"> <br>
+                        <input type="text" class="inp" name="todo6"> <br>
+                        <input type="submit" class="btn-submit" name="btn-submit" value="submit">
+                    </form>
+                    <form action="del.php" style="margin-top:2%">
+                        <input type="submit" class="btn-del" name="btn-del" value="delete">
+                    </form>
+                </div>
+                    </center>  
                </div>
             </div>        
-
             <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
                 <script  src="js/index.js"></script>
-
-
-
-
         </body>
         </html>
         <?php

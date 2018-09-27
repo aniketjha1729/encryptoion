@@ -42,9 +42,6 @@ $conn=mysqli_connect($dbservername,$username,$password,$dbname);
 						exit();
 					}elseif ($hashedPwdCheck==true) {
 						$_SESSION['u_id']=$row['id'];
-						// $_SESSION['u_email']=$row['user_email'];
-						// $_SESSION['u_uid']=$row['user_name'];
-						
 						?>
 						<script>
             				window.location.href='dashboard.php';
