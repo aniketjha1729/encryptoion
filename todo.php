@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $id=$_SESSION['u_id'];
 $dbservername="localhost";
 $username="root";
 $password="aniket";
@@ -12,12 +14,13 @@ $conn=mysqli_connect($dbservername,$username,$password,$dbname);
         $todo5=$_POST['todo5'];
         $todo6=$_POST['todo6'];
     }
-    $sql="INSERT INTO todo(todo1,todo2,todo3,todo4,todo5,todo6) VALUES('$todo1','$todo2','$todo3','$todo4','$todo5','$todo6')";
-    echo $sql;
+    $sql="INSERT INTO todo(todo1,todo2,todo3,todo4,todo5,todo6,user_id) VALUES('$todo1','$todo2','$todo3','$todo4','$todo5','$todo6','$id')";
     if(mysqli_query($conn,$sql)){
+        // $_SESSION['id']=$row['id'];
         ?>
         <script>
-			alert("Succefully created Your Todos")
+			alert("Succefully created Your Todos");
+            window.location.href="dashboard.php";
         </script>
        <?php 
     }
